@@ -47,3 +47,16 @@ Describe "Get-TotalLength" {
     }
 
 }
+
+Describe "Get-SimilarityScore" {
+  
+    It "should return the total as 2" {
+        $result = Get-SimilarityScore -FirstNumbers 1,2,2 -SecondNumbers 1,3,1
+        $result | Should -Be 2
+    }
+
+    It "should return the total as 2" {
+        $result = Get-SimilarityScore -FirstNumbers 1,2,1 -SecondNumbers 1,3,1
+        $result | Should -Be 4
+    }
+}
